@@ -5,9 +5,9 @@
   "author": "Cesar de Barros <cbsorrilha@hotmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "parcel build ./client/index.html -d ./client/dist",
+    "build": "parcel build ./client/index.html -d ./docs",
     "start": "parcel ./client/index.html",
-    "test": "eslint --ignore-pattern node_modules client && jest"
+    "test": "eslint --ignore-pattern node_modules --ignore-pattern docs client && jest"
   },
   "dependencies": {
     "axios": "0.18.0",
