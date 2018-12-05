@@ -5,7 +5,7 @@
   "author": "Cesar de Barros <cbsorrilha@hotmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "parcel build ./client/index.html -d ./client/dist",
+    "build": "parcel build ./client/index.html -d ./dist",
     "start": "parcel ./client/index.html",
     "test": "eslint --ignore-pattern node_modules client && jest"
   },
@@ -47,6 +47,6 @@
     "setupTestFrameworkScriptFile": "<rootDir>client/jest.config.js"
   },
   "engines" : { 
-    "node" : ">=10.14.1" 
+    "node" : ">=8.11.4" 
   }
 }
