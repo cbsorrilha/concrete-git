@@ -1,8 +1,5 @@
 .cache/
-dist/
+dist/*
+!dist/now.json
 node_modules/
-client/node_modules/
-server/node_modules/
-client/dist/
-server/dist/
 .env
