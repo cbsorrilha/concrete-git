@@ -14,7 +14,7 @@ deploy:
       all_branches: true
       master: false
   - provider: script
-    script: now ./dist --token $NOW_TOKEN && now alias -a ./dist/now.json --token $NOW_TOKEN
+    script: now ./dist --token $NOW_TOKEN && now alias -A ./dist/now.json --token $NOW_TOKEN
     skip_cleanup: true
     on:
       master: true
