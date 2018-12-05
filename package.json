@@ -7,14 +7,13 @@
   "scripts": {
     "build": "parcel build ./client/index.html -d ./dist",
     "start": "parcel ./client/index.html",
-    "test": "eslint --ignore-pattern node_modules client && jest"
+    "inspect": "yarn lint && yarn test",
+    "lint": "eslint --ignore-pattern node_modules client",
+    "test": "jest"
   },
   "dependencies": {
     "axios": "0.18.0",
-    "babel-plugin-transform-object-rest-spread": "6.26.0",
     "connected-react-router": "5.0.1",
-    "enzyme": "^3.7.0",
-    "enzyme-adapter-react-16": "^1.7.0",
     "history": "^4.7.2",
     "react": "16.4.2",
     "react-dom": "16.4.2",
@@ -41,7 +40,10 @@
     "eslint-plugin-react": "7.10.0",
     "jest": "23.4.2",
     "parcel-bundler": ">=1.10.3",
-    "prettier": "1.13.7"
+    "prettier": "1.13.7",
+    "babel-plugin-transform-object-rest-spread": "6.26.0",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.7.0"
   },
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>client/jest.config.js"

@@ -4,17 +4,11 @@ node_js:
 cache:
   directories:
     - "node_modules"
-script: yarn test && yarn build
-before_deploy: yarn add now
+script: yarn inspect && yarn build
+before_deploy: yarn global add now
 deploy:
   - provider: script
-    script: now ./dist --token $NOW_TOKEN
-    skip_cleanup: true
-    on:
-      all_branches: true
-      master: false
-  - provider: script
-    script: now ./dist --token $NOW_TOKEN && now alias -A ./dist/now.json --token $NOW_TOKEN
+    script: cd ./dist && now --token $NOW_TOKEN && now alias --token $NOW_TOKEN
     skip_cleanup: true
     on:
       master: true
