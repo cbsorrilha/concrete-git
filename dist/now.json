@@ -1,4 +1,9 @@
 {
   "version": 1,
-  "alias": "gitao"
+  "alias": "gitao",
+  "static": {
+    "rewrites": [
+      { "source": "*", "destination": "/index.html" }
+    ]
+  }
 }
