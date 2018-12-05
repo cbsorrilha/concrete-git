@@ -1,0 +1,33 @@
+{
+  "non-interactive": true,
+  "dry-run": false,
+  "verbose": false,
+  "force": false,
+  "pkgFiles": [
+    "package.json"
+  ],
+  "increment": "minor",
+  "preReleaseId": null,
+  "buildCommand": false,
+  "safeBump": false,
+  "beforeChangelogCommand": false,
+  "changelogCommand": "git log --pretty=format:\"* %s (%h)\" [REV_RANGE]",
+  "requireCleanWorkingDir": false,
+  "requireUpstream": true,
+  "src": {
+    "commit": true,
+    "commitMessage": "ci: Release %s",
+    "commitArgs": "",
+    "tag": true,
+    "tagName": "%s",
+    "tagAnnotation": "Release %s",
+    "push": true,
+    "pushArgs": "",
+    "pushRepo": null,
+    "beforeStartCommand": false,
+    "afterReleaseCommand": false
+  },
+  "npm": {
+    "publish": false
+  }
+}

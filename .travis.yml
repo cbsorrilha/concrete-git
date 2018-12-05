@@ -17,4 +17,4 @@ deploy:
     script: now ./dist --token $NOW_TOKEN && now alias -a ./dist/now.json --token $NOW_TOKEN
     skip_cleanup: true
     on:
-      master: true
+      tags: true
