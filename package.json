@@ -7,8 +7,7 @@
   "scripts": {
     "build": "parcel build ./client/index.html -d ./client/dist",
     "start": "parcel ./client/index.html",
-    "lint": "eslint --ignore-pattern node_modules src",
-    "test": "jest"
+    "test": "eslint --ignore-pattern node_modules client && jest"
   },
   "dependencies": {
     "axios": "0.18.0",
@@ -46,5 +45,8 @@
   },
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>client/jest.config.js"
+  },
+  "engines" : { 
+    "node" : ">=10.14.1" 
   }
 }
