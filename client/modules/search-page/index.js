@@ -1,24 +1,9 @@
 import { connect } from 'react-redux';
 import SearchPage from './search-page';
 import actions from './actions';
+import searchPageReducer from './reducer';
 
-const initialState = {
-  searchField: '',
-};
-
-export const reducer = (state = initialState, action) => {
-  const { type, payload } = action;
-  switch (type) {
-    case 'UPDATE_SEARCH_FIELD':
-      return {
-        searchField: payload.value,
-        ...state,
-      };
-
-    default:
-      return state;
-  }
-};
+export const reducer = searchPageReducer;
 
 const mapStateToProps = () => ({});
 

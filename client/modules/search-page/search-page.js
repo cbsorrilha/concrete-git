@@ -1,5 +1,5 @@
 import React from 'react';
 
 export default function SearchPage(props) {
-  return <div>Search Page</div>;
+  return <div style={{ border: 'solid black thick' }}>Search Page</div>;
 }
