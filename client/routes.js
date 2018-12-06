@@ -1,12 +1,13 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { dynamicImport } from './components/utils/dynamic-import';
+import { dynamicImport } from './services/dynamic-import';
+import AppShell from './components/organisms/app-shell';
 
 const Routes = () => (
   <Router>
-    <Fragment>
+    <AppShell>
       <Route path="/" component={dynamicImport(() => import('./modules/search-page'))} />
-    </Fragment>
+    </AppShell>
   </Router>
 );
 
