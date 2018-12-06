@@ -1,5 +1,5 @@
 import React from 'react';
-import Navigation from '../organisms/navigation';
+import Navigation from './navigation';
 import Wrapper from '../molecules/wrapper';
 
 const AppShell = ({ children }) => (
