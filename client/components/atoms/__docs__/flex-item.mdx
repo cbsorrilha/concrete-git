@@ -1,0 +1,99 @@
+---
+name: FlexItem
+menu: Atoms
+---
+
+import { Playground } from 'docz';
+import Card from '../card.js';
+import FlexContainer from '../flex-container';
+import FlexItem from '../flex-item';
+
+
+# Flex Item
+The Flex Item give you options to control the flex properties of the elements inside a FlexContainer:
+
+
+## Order
+This props set the order of the element
+
+<FlexContainer inline={true} style={{border: 'solid black thin'}}>
+  <FlexItem style={{border: 'solid blue thin'}}>
+    Flex Item 1
+  </FlexItem>
+  <FlexItem style={{border: 'solid blue thin'}}>
+    Flex Item 2
+  </FlexItem>
+  <FlexItem style={{border: 'solid blue thin'}}>
+    Flex Item 3
+  </FlexItem>
+  <FlexItem style={{border: 'solid blue thin'}}>
+    Flex Item 4
+  </FlexItem>
+  <FlexItem style={{border: 'solid blue thin'}} order="-1">
+    Flex Item 5 but order="-1"
+  </FlexItem>
+</FlexContainer>
+
+## Grow
+This props defines `flex-grow` property
+
+<FlexContainer width="100%" style={{border: 'solid black thin'}}>
+  <FlexItem style={{border: 'solid blue thin'}} grow="1">
+    Flex Item 1 has grow="1"
+  </FlexItem>
+  <FlexItem style={{border: 'solid blue thin'}}>
+    Flex Item 2
+  </FlexItem>
+</FlexContainer>
+
+## Basis
+This props defines `flex-basis` property
+
+<FlexContainer width="100%" style={{border: 'solid black thin'}}>
+  <FlexItem basis="20%" grow="1">
+    Flex Item 1 has basis="20%"
+  </FlexItem>
+  <FlexItem basis="50%" style={{border: 'solid blue thin'}}>
+    Flex Item 2 has basis="50%"
+  </FlexItem>
+</FlexContainer>
+
+## Align
+This props defines `align-self` property
+
+<FlexContainer width="100%" style={{border: 'solid black thin'}}>
+  <FlexItem align="flex-end" style={{border: 'solid blue thin'}}>
+    Flex Item 1 has align="flex-end"
+  </FlexItem>
+  <FlexItem  style={{border: 'solid blue thin'}}>
+    Flex Item 2
+  </FlexItem>
+</FlexContainer>
+
+## Playground
+<Playground>
+  <FlexContainer>
+    <FlexItem
+      width="100%"
+      height="100px"
+      order="0"
+      grow="1"
+      shrink="1"
+      basis="75%"
+      align="flex-start">
+      Flex Item 1
+    </FlexItem>
+    <FlexItem>
+      Flex Item 2
+    </FlexItem>
+    <FlexItem>
+      Flex Item 3
+    </FlexItem>
+    <FlexItem>
+      Flex Item 4
+    </FlexItem>
+    <FlexItem>
+      Flex Item 5
+    </FlexItem>
+  </FlexContainer>
+</Playground>

@@ -1,0 +1,290 @@
+---
+name: FlexContainer
+menu: Atoms
+---
+
+import { Playground } from 'docz';
+import Card from '../card.js';
+import FlexContainer from '../flex-container';
+import FlexItem from '../flex-item';
+
+
+# Flex Container
+The Flex Container give you options to control the flex properties of that element:
+
+
+## Inline
+This props create a `display: inline-flex` element
+
+<FlexContainer inline={true} style={{border: 'solid black thin'}}>
+  <FlexItem>
+    Flex Item 1
+  </FlexItem>
+  <FlexItem>
+    Flex Item 2
+  </FlexItem>
+  <FlexItem>
+    Flex Item 3
+  </FlexItem>
+  <FlexItem>
+    Flex Item 4
+  </FlexItem>
+  <FlexItem>
+    Flex Item 5
+  </FlexItem>
+</FlexContainer>
+
+## Width
+This props defines the width of the flex element
+
+<FlexContainer width="300px" style={{border: 'solid black thin'}}>
+  <FlexItem>
+    Flex Item 1
+  </FlexItem>
+  <FlexItem>
+    Flex Item 2
+  </FlexItem>
+  <FlexItem>
+    Flex Item 3
+  </FlexItem>
+  <FlexItem>
+    Flex Item 4
+  </FlexItem>
+  <FlexItem>
+    Flex Item 5
+  </FlexItem>
+</FlexContainer>
+
+## Height
+This props defines the height of the flex element
+
+<FlexContainer height="200px" style={{border: 'solid black thin'}}>
+  <FlexItem>
+    Flex Item 1
+  </FlexItem>
+  <FlexItem>
+    Flex Item 2
+  </FlexItem>
+  <FlexItem>
+    Flex Item 3
+  </FlexItem>
+  <FlexItem>
+    Flex Item 4
+  </FlexItem>
+  <FlexItem>
+    Flex Item 5
+  </FlexItem>
+</FlexContainer>
+
+## Direction
+This props defines the flex direction of the flex element
+
+<FlexContainer direction="row" style={{border: 'solid black thin', marginBottom: '1.5rem'}}>
+  <FlexItem>
+    Direction <strong>row</strong>
+  </FlexItem>
+  <FlexItem>
+    Flex Item 2
+  </FlexItem>
+  <FlexItem>
+    Flex Item 3
+  </FlexItem>
+  <FlexItem>
+    Flex Item 4
+  </FlexItem>
+  <FlexItem>
+    Flex Item 5
+  </FlexItem>
+</FlexContainer>
+
+<FlexContainer direction="column"  style={{border: 'solid black thin'}}>
+  <FlexItem>
+    Direction <strong>column</strong>
+  </FlexItem>
+  <FlexItem>
+    Flex Item 2
+  </FlexItem>
+  <FlexItem>
+    Flex Item 3
+  </FlexItem>
+  <FlexItem>
+    Flex Item 4
+  </FlexItem>
+  <FlexItem>
+    Flex Item 5
+  </FlexItem>
+</FlexContainer>
+
+
+## Wrap
+This props defines the flex wrap of the flex element
+
+<FlexContainer direction="column" height="100px" wrap="wrap" style={{border: 'solid black thin', marginBottom: '1.5rem'}}>
+  <FlexItem>
+    Wrap set as <strong>wrap</strong>
+  </FlexItem>
+  <FlexItem>
+    Flex Item 2
+  </FlexItem>
+  <FlexItem>
+    Flex Item 3
+  </FlexItem>
+  <FlexItem>
+    Flex Item 4
+  </FlexItem>
+  <FlexItem>
+    Flex Item 5
+  </FlexItem>
+</FlexContainer>
+
+<FlexContainer direction="column" height="100px" wrap="nowrap" style={{border: 'solid black thin', marginBottom: '3rem'}}>
+  <FlexItem>
+    Wrap set as <strong>nowrap</strong>
+  </FlexItem>
+  <FlexItem>
+    Flex Item 2
+  </FlexItem>
+  <FlexItem>
+    Flex Item 3
+  </FlexItem>
+  <FlexItem>
+    Flex Item 4
+  </FlexItem>
+  <FlexItem>
+    Flex Item 5
+  </FlexItem>
+</FlexContainer>
+
+<FlexContainer direction="column" height="100px" wrap="wrap-reverse" style={{border: 'solid black thin', marginBottom: '1.5rem'}}>
+  <FlexItem>
+    Wrap set as <strong>wrap-reverse</strong>
+  </FlexItem>
+  <FlexItem>
+    Flex Item 2
+  </FlexItem>
+  <FlexItem>
+    Flex Item 3
+  </FlexItem>
+  <FlexItem>
+    Flex Item 4
+  </FlexItem>
+  <FlexItem>
+    Flex Item 5
+  </FlexItem>
+</FlexContainer>
+
+## Flow
+This props defines the flex flow (a shorthand of the `direction` and `wrap` properties) of the flex element
+
+<FlexContainer height="100px" flow="column wrap-reverse" style={{border: 'solid black thin', marginBottom: '1.5rem'}}>
+  <FlexItem>
+    Flow <strong>column wrap-reverse</strong>
+  </FlexItem>
+  <FlexItem>
+    Flex Item 2
+  </FlexItem>
+  <FlexItem>
+    Flex Item 3
+  </FlexItem>
+  <FlexItem>
+    Flex Item 4
+  </FlexItem>
+  <FlexItem>
+    Flex Item 5
+  </FlexItem>
+</FlexContainer>
+
+
+## Justify
+This props defines the `justify-content` property of the flex element
+
+<FlexContainer height="100px" justify="center" style={{border: 'solid black thin', marginBottom: '1.5rem'}}>
+  <FlexItem>
+    Justify <strong>center</strong>
+  </FlexItem>
+  <FlexItem>
+    Flex Item 2
+  </FlexItem>
+  <FlexItem>
+    Flex Item 3
+  </FlexItem>
+  <FlexItem>
+    Flex Item 4
+  </FlexItem>
+  <FlexItem>
+    Flex Item 5
+  </FlexItem>
+</FlexContainer>
+
+## AlignItems
+This props defines the `align-items` property of the flex element
+
+<FlexContainer height="100px" alignItems="center" style={{border: 'solid black thin', marginBottom: '1.5rem'}}>
+  <FlexItem>
+    alignItems <strong>center</strong>
+  </FlexItem>
+  <FlexItem>
+    Flex Item 2
+  </FlexItem>
+  <FlexItem>
+    Flex Item 3
+  </FlexItem>
+  <FlexItem>
+    Flex Item 4
+  </FlexItem>
+  <FlexItem>
+    Flex Item 5
+  </FlexItem>
+</FlexContainer>
+
+## AlignContent
+This props defines the `align-content` property of the flex element
+
+<FlexContainer height="100px" alignContent="center" style={{border: 'solid black thin', marginBottom: '1.5rem'}}>
+  <FlexItem>
+    alignContent <strong>center</strong>
+  </FlexItem>
+  <FlexItem>
+    Flex Item 2
+  </FlexItem>
+  <FlexItem>
+    Flex Item 3
+  </FlexItem>
+  <FlexItem>
+    Flex Item 4
+  </FlexItem>
+  <FlexItem>
+    Flex Item 5
+  </FlexItem>
+</FlexContainer>
+
+
+## Playground
+<Playground>
+  <FlexContainer
+    inline="true"
+    width="100%"
+    height="300px"
+    direction="row"
+    wrap="nowrap"
+    flow="row nowrap"
+    justify="center"
+    alignItems="center"
+    alignContent="center">
+    <FlexItem>
+      Flex Item 1
+    </FlexItem>
+    <FlexItem>
+      Flex Item 2
+    </FlexItem>
+    <FlexItem>
+      Flex Item 3
+    </FlexItem>
+    <FlexItem>
+      Flex Item 4
+    </FlexItem>
+    <FlexItem>
+      Flex Item 5
+    </FlexItem>
+  </FlexContainer>
+</Playground>

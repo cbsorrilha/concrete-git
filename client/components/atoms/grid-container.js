@@ -1,5 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import PropTypes from 'prop-types';
+import { media } from '../helpers';
 
 const GridContainer = ({ ...props }) => <div {...props} />;
 
@@ -50,20 +52,66 @@ const gridAuto = ({ auto = null }) => {
   `;
 };
 
+const gridStyles = ({
+  height = 'auto',
+  width = '100%',
+  justifyItems = null,
+  alignItems = null,
+  placeItems = null,
+  justifyContent = null,
+  alignContent = null,
+  placeContent = null,
+  grid = null,
+}) => css`
+  ${!height ? '' : `height: ${height};`};
+  ${!width ? '' : `width: ${width};`};
+  ${!justifyItems ? '' : `justify-items: ${justifyItems};`};
+  ${!alignItems ? '' : `align-items: ${alignItems};`};
+  ${!placeItems ? '' : `place-items: ${placeItems}`};
+  ${!justifyContent ? '' : `justify-content: ${justifyContent}`};
+  ${!alignContent ? '' : `align-content: ${alignContent}`};
+  ${!placeContent ? '' : `place-content: ${placeContent}`};
+  ${!grid ? '' : `grid: ${grid}`};
+`;
+
 const GridContainerUI = styled(GridContainer)`
-  height: ${({ height = 'auto' }) => `${height}`};
-  width: ${({ width = '100%' }) => `${width}`};
   display: ${({ inline = false }) => (inline ? 'inline-' : '')}grid;
-  ${({ justifyItems = null }) => (!justifyItems ? '' : `justify-items: ${justifyItems}`)};
-  ${({ alignItems = null }) => (!alignItems ? '' : `align-items: ${alignItems}`)};
-  ${({ placeItems = null }) => (!placeItems ? '' : `place-items: ${placeItems}`)};
-  ${({ justifyContent = null }) => (!justifyContent ? '' : `justify-content: ${justifyContent}`)};
-  ${({ alignContent = null }) => (!alignContent ? '' : `align-content: ${alignContent}`)};
-  ${({ placeContent = null }) => (!placeContent ? '' : `place-content: ${placeContent}`)};
+  ${gridStyles};
   ${gridAuto};
   ${gridGap};
   ${gridTemplate};
-  ${({ grid = null }) => (!grid ? '' : `grid: ${grid}`)};
+
+  @media (min-width: ${media.tablet}px) {
+    ${({ tablet = { width: false, height: false } }) => css`
+    ${gridStyles(tablet)}
+    ${gridAuto(tablet)}
+    ${gridGap(tablet)}
+    ${gridTemplate(tablet)}
+    `};
+  }
+  @media (min-width: ${media.desktop}px) {
+    ${({ desktop = { width: false, height: false } }) => css`
+    ${gridStyles(desktop)}
+    ${gridAuto(desktop)}
+    ${gridGap(desktop)}
+    ${gridTemplate(desktop)}
+    `};
+  }
 `;
 
 export default GridContainerUI;
+
+GridContainerUI.propTypes = {
+  mobile: PropTypes.object,
+  tablet: PropTypes.object,
+  desktop: PropTypes.object,
+  width: PropTypes.string,
+  height: PropTypes.string,
+  justifyItems: PropTypes.oneOf(['start', 'end', 'center', 'stretch']),
+  alignItems: PropTypes.oneOf(['start', 'end', 'center', 'stretch']),
+  placeItems: PropTypes.string,
+  justifyContent: PropTypes.string,
+  alignContent: PropTypes.oneOf(['start', 'end', 'center', 'stretch', 'space-around', 'space-between', 'space-evenly']),
+  placeContent: PropTypes.string,
+  grid: PropTypes.string,
+};
