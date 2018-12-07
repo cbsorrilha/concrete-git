@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import PropTypes from 'prop-types';
+import { media } from '../helpers';
 
 class GridItem extends Component {
   render() {
@@ -38,13 +40,45 @@ const gridRow = ({ row = null }) => {
     ${row.start ? `grid-row-start: ${row.start};` : ''}
   `;
 };
+
+const gridItemStyles = ({ area = null, justify = null, align = null }) => css`
+  grid-area: ${area};
+  justify-self: ${justify};
+  align-self: ${align};
+`;
+
 const GridItemUI = styled(GridItem)`
-  grid-area: ${props => props.area};
-  justify-self: ${props => props.justify};
-  align-self: ${props => props.align};
-  place-self: ${props => props.place};
+  ${gridItemStyles};
   ${gridColumn};
   ${gridRow};
+  @media (min-width: ${media.tablet}px) {
+    ${({ tablet = { width: false, height: false } }) => css`
+      ${gridItemStyles};
+      ${gridColumn};
+      ${gridRow};
+    `};
+  }
+  @media (min-width: ${media.desktop}px) {
+    ${({ desktop = { width: false, height: false } }) => css`
+      ${gridItemStyles};
+      ${gridColumn};
+      ${gridRow};
+    `};
+  }
 `;
 
 export default GridItemUI;
+
+GridItemUI.propTypes = {
+  mobile: PropTypes.object,
+  tablet: PropTypes.object,
+  desktop: PropTypes.object,
+  width: PropTypes.string,
+  height: PropTypes.string,
+  order: PropTypes.string,
+  grow: PropTypes.string,
+  shrink: PropTypes.string,
+  basis: PropTypes.string,
+  flex: PropTypes.string,
+  align: PropTypes.string,
+};

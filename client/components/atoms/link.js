@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-const LinkUI = ({ href, to, ...props }) => {
+const CustomLink = ({ href, to, ...props }) => {
   if (!href && !to) {
     return <a {...props} />;
   }
@@ -40,9 +41,17 @@ const color = ({ variant }) => {
   }
 };
 
-export default styled(LinkUI)`
+const LinkUI = styled(CustomLink)`
   font-family: 'Hind', sans-serif;
   text-decoration: none;
   cursor: pointer;
   ${color};
 `;
+
+export default LinkUI;
+
+LinkUI.propTypes = {
+  variant: PropTypes.string,
+  to: PropTypes.string,
+  href: PropTypes.string,
+};

@@ -1,0 +1,57 @@
+---
+name: Card
+menu: Atoms
+---
+
+import { Playground } from 'docz';
+import Card from '../card.js';
+import GridContainer from '../grid-container';
+import GridItem from '../grid-item';
+
+
+# Card
+The **Card** component represents a card structure.
+
+## Width
+You use a predefined size or a customizable size passing a css width to the `width` property :
+
+<GridContainer gap={{row: '2rem'}} desktop={{width: '100%'}}>
+  <GridItem>
+    <Card width="xs">this card has <strong>width="xs"</strong></Card>
+  </GridItem>
+  <GridItem>
+    <Card width="sm">this card has <strong>width="sm"</strong></Card>
+  </GridItem>
+  <GridItem>
+    <Card width="md">this card has <strong>width="md"</strong></Card>
+  </GridItem>
+  <GridItem>
+    <Card width="lg">this card has <strong>width="lg"</strong></Card>
+  </GridItem>
+  <GridItem>
+    <Card width="300px">this card has <strong>width="300px"</strong></Card>
+  </GridItem>
+</GridContainer>
+
+## Padding
+You can control padding in a granular fashion with the `padding` property :
+
+<GridContainer gap={{row: '2rem'}} desktop={{width: '100%'}}>
+  <GridItem>
+    <Card>the default padding is<strong>padding="1.5rem"</strong></Card>
+  </GridItem>
+  <GridItem>
+    <Card padding="10px">this card has <strong>padding="10px"</strong></Card>
+  </GridItem>
+  <GridItem>
+    <Card padding={{left: '1rem', top: '10px'}}>this card has <strong>{`padding={{left: '1rem', top: '10px'}}`}</strong></Card>
+  </GridItem>
+  <GridItem>
+    <Card padding={{right: '10%', bottom: '1cm'}}>this card has <strong>{`padding={{right: '10%', bottom: '1cm'}}`}</strong></Card>
+  </GridItem>
+</GridContainer>
+
+## Playground
+<Playground>
+  <Card width="300px">I am a Card! Edit me!</Card>
+</Playground>

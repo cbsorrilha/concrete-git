@@ -3,3 +3,4 @@ dist/*
 !dist/now.json
 node_modules/
 .env
+yarn-error.log

@@ -1,0 +1,51 @@
+---
+name: Button
+menu: Atoms
+---
+
+import { Playground } from 'docz';
+import Button from '../button.js';
+import FlexContainer from '../flex-container';
+import FlexItem from '../flex-item';
+
+
+# Button
+The **Button** component represents a button.
+
+
+## Variants
+You style can be controller by the property `variant`:
+
+
+### Primary
+
+<FlexContainer>
+  <FlexItem width="100%" desktop={{width: '150px'}}>
+    <Button variant="primary">Primary</Button>
+  </FlexItem>
+</FlexContainer>
+
+
+### Default
+
+
+<FlexContainer>
+  <FlexItem  width="100%" desktop={{width: '150px'}}>
+    <Button>Primary</Button>
+  </FlexItem>
+</FlexContainer>
+
+
+## Disabled
+This option turn the button on it's disabled form :
+
+<FlexContainer>
+  <FlexItem width="100%" desktop={{width: '150px'}}>
+    <Button variant="default" disabled={true} onClick={f => f}>I am a disabled button</Button>
+  </FlexItem>
+</FlexContainer>
+
+## Playground
+<Playground>
+  <Button variant="default" disabled={false} onClick={f => f}>I am a button! Edit me!</Button>
+</Playground>
