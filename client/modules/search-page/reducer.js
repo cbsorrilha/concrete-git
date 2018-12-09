@@ -7,8 +7,8 @@ export default (state = initialState, action) => {
   switch (type) {
     case 'UPDATE_SEARCH_FIELD':
       return {
-        searchField: payload.value,
         ...state,
+        searchField: payload.value,
       };
 
     default:

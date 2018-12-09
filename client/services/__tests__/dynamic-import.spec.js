@@ -7,7 +7,7 @@ describe('Testing the dynamicImport function', () => {
 
   it('should render the Decoy component', done => {
     const mockImport = () => Promise.resolve({ default: Decoy });
-    const Component = dynamicImport(mockImport)();
+    const Component = dynamicImport(mockImport, {})();
     const wrapper = shallow(Component);
     setTimeout(() => {
       wrapper.update();

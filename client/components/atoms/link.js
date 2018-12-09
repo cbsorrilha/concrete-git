@@ -8,7 +8,7 @@ const CustomLink = ({ href, to, ...props }) => {
     return <a {...props} />;
   }
   if (!to) {
-    <a {...props} href={href} />;
+    return <a {...props} href={href} />;
   }
   return <Link {...props} to={to} />;
 };
@@ -42,7 +42,6 @@ const color = ({ variant }) => {
 };
 
 const LinkUI = styled(CustomLink)`
-  font-family: 'Hind', sans-serif;
   text-decoration: none;
   cursor: pointer;
   ${color};

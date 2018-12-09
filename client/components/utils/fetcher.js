@@ -13,45 +13,53 @@ export class Fetcher extends Component {
   }
 
   componentDidMount() {
-    const { endpoint, options = null } = this.props;
+    const { endpoint, options = null, onRequest = f => f, onSuccess = f => f, onError = f => f } = this.props;
+    onRequest();
     request(endpoint, options)
       .then(({ data }) => {
         this.setState({
           loading: false,
           data: data,
         });
+        onSuccess({ data });
       })
-      .catch(err => {
+      .catch(error => {
         this.setState({
           loading: false,
           error: true,
         });
-        if (err.response && err.response.data) {
-          console.error(err.response.data.error);
+        onError({ error });
+        if (error.response && error.response.data) {
+          console.error(error.response.data.error);
         }
       });
   }
 
   componentDidUpdate(prevProps) {
-    const { endpoint, options = null } = this.props;
+    const { endpoint, options = null, onRequest = f => f, onSuccess = f => f, onError = f => f } = this.props;
     if (prevProps.endpoint === endpoint) {
       return false;
     }
+    onRequest();
     request(endpoint, options)
       .then(({ data }) => {
         this.setState({
           loading: false,
           data: data,
         });
+        onSuccess({ data });
       })
-      .catch(err => {
+      .catch(error => {
         this.setState({
           loading: false,
           error: true,
         });
-        if (err.response && err.response.data) {
-          console.error(err.response.data.error);
+
+        if (error.response && error.response.data) {
+          console.error(error.response.data.error);
+          return onError(error.response);
         }
+        onError({ error });
       });
   }
 
@@ -62,6 +70,6 @@ export class Fetcher extends Component {
     if (this.state.error) {
       return <div>oops... tivemos um problema :(</div>;
     }
-    return this.props.render(this.props, this.state);
+    return this.props.children(this.props, this.state);
   }
 }

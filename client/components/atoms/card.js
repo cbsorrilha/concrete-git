@@ -1,22 +1,9 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
-import { media } from '../helpers';
+import { media, margin, padding } from '../helpers';
 
 const Card = ({ ...props }) => <div {...props} />;
-
-const padding = ({ padding = '1.5rem' }) => {
-  if (typeof padding == 'string') {
-    return `padding: ${padding};`;
-  }
-
-  return `
-    ${padding.top ? `padding-top: ${padding.top}` : `padding-top: 1.5rem`};
-    ${padding.right ? `padding-right: ${padding.right}` : `padding-right: 1.5rem`};
-    ${padding.bottom ? `padding-bottom: ${padding.bottom}` : `padding-bottom: 1.5rem`};
-    ${padding.left ? `padding-left: ${padding.left}` : `padding-left: 1.5rem`};
-  `;
-};
 
 const setMaxWidth = ({ maxWidth = false }) => {
   if (!maxWidth) {
@@ -60,6 +47,7 @@ const CardUI = styled(Card)`
   display: block;
   ${cardStyles};
   ${padding};
+  ${margin};
   width: ${setWidth};
   max-width: ${setMaxWidth};
   -webkit-box-shadow: 2px 2px 10px 0px rgba(175, 175, 175, 1);
@@ -71,6 +59,7 @@ const CardUI = styled(Card)`
       css`
         ${cardStyles(tablet)};
         ${padding(tablet)};
+        ${margin(tablet)};
         ${!tablet.width ? '' : `width: ${setWidth(tablet)}`};
         ${!tablet.maxWidth ? '' : `max-width: ${setMaxWidth(tablet)}`};
       `};
@@ -80,6 +69,7 @@ const CardUI = styled(Card)`
       css`
         ${cardStyles(desktop)};
         ${padding(desktop)};
+        ${margin(desktop)};
         ${!desktop.width ? '' : `width: ${setWidth(desktop)}`};
         ${!desktop.maxWidth ? '' : `max-width: ${setMaxWidth(desktop)}`};
       `};
