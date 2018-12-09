@@ -63,7 +63,8 @@
       "maxEOF": 1
     }],
     "prefer-template": "error",
-    "react/no-array-index-key": "error",
+    "react/no-array-index-key": "off",
+    "camelcase": "off",
     "prefer-destructuring": ["error", {
       "array": true,
       "object": true

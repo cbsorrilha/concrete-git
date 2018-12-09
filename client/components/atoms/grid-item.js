@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
-import { media } from '../helpers';
+import { media, padding, margin } from '../helpers';
 
 class GridItem extends Component {
   render() {
@@ -51,18 +51,24 @@ const GridItemUI = styled(GridItem)`
   ${gridItemStyles};
   ${gridColumn};
   ${gridRow};
+  ${padding};
+  ${margin};
   @media (min-width: ${media.tablet}px) {
     ${({ tablet = { width: false, height: false } }) => css`
-      ${gridItemStyles};
-      ${gridColumn};
-      ${gridRow};
+      ${gridItemStyles(tablet)};
+      ${gridColumn(tablet)};
+      ${gridRow(tablet)};
+      ${padding(tablet)};
+      ${margin(tablet)};
     `};
   }
   @media (min-width: ${media.desktop}px) {
     ${({ desktop = { width: false, height: false } }) => css`
-      ${gridItemStyles};
-      ${gridColumn};
-      ${gridRow};
+      ${gridItemStyles(desktop)};
+      ${gridColumn(desktop)};
+      ${gridRow(desktop)};
+      ${padding(desktop)};
+      ${margin(desktop)};
     `};
   }
 `;

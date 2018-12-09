@@ -1,3 +1,6 @@
-export const performAction = () => ({
-  type: 'ACTION_PERFORMED',
+export const updateSearchField = value => ({
+  type: 'UPDATE_SEARCH_FIELD',
+  payload: {
+    value,
+  },
 });

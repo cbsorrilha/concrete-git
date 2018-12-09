@@ -2,35 +2,37 @@ import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 import { media } from '../helpers';
 
-const textStyles = ({ align = 'left', color = '#333', weight = 'normal', size = 'md' }) => css`
+const textStyles = ({ align = 'left', color = '#333', weight = 'normal', bold }) => css`
   ${!align ? '' : `text-align: ${align}`};
   ${!color ? '' : `color: ${color}`};
-  ${!weight ? '' : `weight: ${weight}`};
+  ${!weight ? '' : `font-weight: ${weight}`};
+  ${!bold ? '' : `font-weight: 700`};
 `;
 
 const getFontSize = ({ size = 'md' }) => {
   switch (size) {
     case 'xs':
-      return '10px';
-    case 'sm':
       return '12px';
+    case 'sm':
+      return '14x';
     case 'md':
-      return '14px';
+      return '16px';
     case 'lg':
-      return '18px';
-    case 'hg':
       return '24px';
+    case 'hg':
+      return '28px';
     default:
       return size;
   }
 };
 
-const initialTextProps = { align: false, color: false, weight: false, size: false };
+const initialTextProps = { align: false, color: false, weight: false, size: false, bold: false };
 
 const TextUI = styled.p`
   width: 100%;
   ${textStyles};
   font-size: ${getFontSize};
+
   @media (min-width: ${media.tablet}px) {
     ${({ tablet = initialTextProps }) => css`
       ${textStyles(tablet)};

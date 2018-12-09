@@ -6,15 +6,15 @@ const defaultRules = ({ align = 'left' }) => `
 `;
 
 const H1 = styled.h1`
-  font-size: 2rem;
-  ${defaultRules};
-`;
-const H2 = styled.h1`
   font-size: 1.5rem;
   ${defaultRules};
 `;
+const H2 = styled.h1`
+  font-size: 1.2rem;
+  ${defaultRules};
+`;
 const H3 = styled.h1`
-  font-size: 1rem;
+  font-size: 0.95rem;
   ${defaultRules};
 `;
 const H4 = styled.h1`

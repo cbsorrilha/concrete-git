@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
-import { media } from '../helpers';
+import { media, margin, padding } from '../helpers';
 
 const GridContainer = ({ ...props }) => <div {...props} />;
 
@@ -80,6 +80,8 @@ const GridContainerUI = styled(GridContainer)`
   ${gridAuto};
   ${gridGap};
   ${gridTemplate};
+  ${padding};
+  ${margin};
 
   @media (min-width: ${media.tablet}px) {
     ${({ tablet = { width: false, height: false } }) => css`
@@ -87,6 +89,8 @@ const GridContainerUI = styled(GridContainer)`
     ${gridAuto(tablet)}
     ${gridGap(tablet)}
     ${gridTemplate(tablet)}
+    ${padding(tablet)}
+    ${margin(tablet)}
     `};
   }
   @media (min-width: ${media.desktop}px) {
@@ -95,6 +99,8 @@ const GridContainerUI = styled(GridContainer)`
     ${gridAuto(desktop)}
     ${gridGap(desktop)}
     ${gridTemplate(desktop)}
+    ${padding(desktop)}
+    ${margin(desktop)}
     `};
   }
 `;

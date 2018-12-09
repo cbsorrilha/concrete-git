@@ -5,8 +5,8 @@ import FlexItem from '../atoms/flex-item';
 
 const renderChildren = children =>
   Array.isArray(children) ? (
-    children.map(child => {
-      return <FlexItem key={child.props.path}>{child}</FlexItem>;
+    children.map((child, i) => {
+      return <FlexItem key={i}>{child}</FlexItem>;
     })
   ) : (
     <FlexItem>{children}</FlexItem>
@@ -21,6 +21,7 @@ const WrapperUI = styled(FlexContainer)`
   max-width: 960px;
   margin: 0 auto;
   margin-top: 2rem;
+  padding: 1rem;
 `;
 
 export default Wrapper;

@@ -26,6 +26,6 @@ export class DynamicImport extends Component {
   }
 }
 
-export const dynamicImport = (load, loading = <p>Loading</p>) => props => (
+export const dynamicImport = (load, { loading = <p>Loading</p> }) => props => (
   <DynamicImport load={load}>{Component => (Component === null ? loading : <Component {...props} />)}</DynamicImport>
 );
