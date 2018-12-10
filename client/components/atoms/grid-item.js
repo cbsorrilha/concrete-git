@@ -58,8 +58,8 @@ const GridItemUI = styled(GridItem)`
       ${gridItemStyles(tablet)};
       ${gridColumn(tablet)};
       ${gridRow(tablet)};
-      ${padding(tablet)};
-      ${margin(tablet)};
+      ${tablet.padding ? padding(tablet) : ''};
+      ${tablet.margin ? margin(tablet) : ''};
     `};
   }
   @media (min-width: ${media.desktop}px) {
@@ -67,8 +67,8 @@ const GridItemUI = styled(GridItem)`
       ${gridItemStyles(desktop)};
       ${gridColumn(desktop)};
       ${gridRow(desktop)};
-      ${padding(desktop)};
-      ${margin(desktop)};
+      ${desktop.padding ? padding(desktop) : ''};
+      ${desktop.margin ? margin(desktop) : ''};
     `};
   }
 `;
@@ -81,10 +81,9 @@ GridItemUI.propTypes = {
   desktop: PropTypes.object,
   width: PropTypes.string,
   height: PropTypes.string,
-  order: PropTypes.string,
-  grow: PropTypes.string,
-  shrink: PropTypes.string,
-  basis: PropTypes.string,
-  flex: PropTypes.string,
+  area: PropTypes.string,
+  justify: PropTypes.string,
   align: PropTypes.string,
+  column: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  row: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
 };

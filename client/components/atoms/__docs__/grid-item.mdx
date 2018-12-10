@@ -1,0 +1,123 @@
+---
+name: GridItem
+menu: Atoms
+---
+
+import { Playground } from 'docz';
+import Card from '../card.js';
+import GridContainer from '../grid-container';
+import GridItem from '../grid-item';
+
+
+# Grid Item
+The Grid Item give you options to control the Grid properties of the elements inside a GridContainer:
+
+
+## Padding and margin
+the padding and margin properties give you control of their respective css properties.
+You can use it in a string fashion or in a granular fashion
+
+<GridContainer template={{ column: '20%'.repeat(5) }} style={{border: 'solid black thin'}}>
+  <GridItem margin="10px" style={{border: 'solid blue thin'}}>
+    Grid Item 1 has *margin="10px"*
+  </GridItem>
+  <GridItem  style={{border: 'solid blue thin'}}>
+    Grid Item 2
+  </GridItem>
+  <GridItem padding="3px" style={{border: 'solid blue thin'}}>
+    Grid Item 3 has *padding="3px"*
+  </GridItem>
+  <GridItem margin={{top:"25px"}} style={{border: 'solid blue thin'}}>
+    Grid Item 4 has *margin={`{{top:"25px"}}`}*
+  </GridItem>
+  <GridItem padding={{bottom:"25px"}} style={{border: 'solid blue thin'}} order="-1">
+    Grid Item 5 has *padding={`{{bottom:"25px"}}`}*
+  </GridItem>
+</GridContainer>
+
+## Align
+This props defines `align-self` property
+
+<GridContainer width="100%" style={{border: 'solid black thin'}}>
+  <GridItem align="center" style={{border: 'solid blue thin'}}>
+    Grid Item 1 has align="center"
+  </GridItem>
+  <GridItem  style={{border: 'solid blue thin'}}>
+    Grid Item 2
+  </GridItem>
+</GridContainer>
+
+## Justify
+This props defines `justify-self` property
+
+<GridContainer width="100%" style={{border: 'solid black thin'}}>
+  <GridItem style={{border: 'solid blue thin'}}>
+    Grid Item 1
+  </GridItem>
+  <GridItem  justify="end" style={{border: 'solid blue thin'}}>
+    Grid Item 2 has justify="end"
+  </GridItem>
+</GridContainer>
+
+## Column and Row
+This props defines the space the element have in the outer grid.
+
+<GridContainer template={{columns: "20% 20% 20% 20%", rows: "30px 30px 30px"}} width="100%" style={{border: 'solid black thin'}}>
+  <GridItem column="1 / 3" style={{border: 'solid blue thin'}}>
+    Grid Item 1 has column="1 / 3"
+  </GridItem>
+  <GridItem column="3 / 5" row="1 / 4" style={{border: 'solid blue thin'}}>
+    Grid Item 2 row="1 / 4"
+  </GridItem>
+</GridContainer>
+
+
+## Playground
+<Playground>
+  <GridContainer template={{ column: '20%'.repeat(5) }}>
+    <GridItem
+      width="100%"
+      height="100px"
+      column="1 / 2"
+      row="1 / 2"
+      justify="start"
+      align="center"
+      padding="2px"
+      margin="2px"
+      >
+      Grid Item 1
+    </GridItem>
+    <GridItem
+      row="1 / 2"
+      justify="start"
+      align="center"
+      padding="2px"
+      margin="2px">
+      Grid Item 2
+    </GridItem>
+    <GridItem
+      row="1 / 2"
+      justify="start"
+      align="center"
+      padding="2px"
+      margin="2px">
+      Grid Item 3
+    </GridItem>
+    <GridItem
+      row="1 / 2"
+      justify="start"
+      align="center"
+      padding="2px"
+      margin="2px">
+      Grid Item 4
+    </GridItem>
+    <GridItem
+      row="1 / 2"
+      justify="start"
+      align="center"
+      padding="2px"
+      margin="2px">
+      Grid Item 5
+    </GridItem>
+  </GridContainer>
+</Playground>

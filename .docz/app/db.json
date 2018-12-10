@@ -8,7 +8,9 @@
     "repository": null,
     "native": false,
     "codeSandbox": true,
-    "themeConfig": {}
+    "themeConfig": {},
+    "dest": "./docs",
+    "base": "/concrete-git/"
   },
   "entries": {
     "index.mdx": {
@@ -203,6 +205,115 @@
           "depth": 2,
           "slug": "align",
           "value": "Align"
+        },
+        {
+          "depth": 2,
+          "slug": "playground",
+          "value": "Playground"
+        }
+      ]
+    },
+    "client/components/atoms/__docs__/grid-container.mdx": {
+      "name": "GridContainer",
+      "menu": "Atoms",
+      "id": "e39548b979340c21f9d7b4ae4541dd2b",
+      "filepath": "client/components/atoms/__docs__/grid-container.mdx",
+      "link": null,
+      "slug": "client-components-atoms-docs-grid-container",
+      "route": "/client-components-atoms-docs-grid-container",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "grid-container",
+          "value": "Grid Container"
+        },
+        {
+          "depth": 2,
+          "slug": "width",
+          "value": "Width"
+        },
+        {
+          "depth": 2,
+          "slug": "height",
+          "value": "Height"
+        },
+        {
+          "depth": 2,
+          "slug": "padding-and-margin",
+          "value": "Padding and margin"
+        },
+        {
+          "depth": 2,
+          "slug": "template",
+          "value": "Template"
+        },
+        {
+          "depth": 2,
+          "slug": "gap",
+          "value": "Gap"
+        },
+        {
+          "depth": 2,
+          "slug": "justifyitems",
+          "value": "JustifyItems"
+        },
+        {
+          "depth": 2,
+          "slug": "alignitems",
+          "value": "AlignItems"
+        },
+        {
+          "depth": 2,
+          "slug": "justifycontent",
+          "value": "JustifyContent"
+        },
+        {
+          "depth": 2,
+          "slug": "aligncontent",
+          "value": "AlignContent"
+        },
+        {
+          "depth": 2,
+          "slug": "playground",
+          "value": "Playground"
+        }
+      ]
+    },
+    "client/components/atoms/__docs__/grid-item.mdx": {
+      "name": "GridItem",
+      "menu": "Atoms",
+      "id": "5ea45964c271499a98cac40a6eb0055c",
+      "filepath": "client/components/atoms/__docs__/grid-item.mdx",
+      "link": null,
+      "slug": "client-components-atoms-docs-grid-item",
+      "route": "/client-components-atoms-docs-grid-item",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "grid-item",
+          "value": "Grid Item"
+        },
+        {
+          "depth": 2,
+          "slug": "padding-and-margin",
+          "value": "Padding and margin"
+        },
+        {
+          "depth": 2,
+          "slug": "align",
+          "value": "Align"
+        },
+        {
+          "depth": 2,
+          "slug": "justify",
+          "value": "Justify"
+        },
+        {
+          "depth": 2,
+          "slug": "column-and-row",
+          "value": "Column and Row"
         },
         {
           "depth": 2,

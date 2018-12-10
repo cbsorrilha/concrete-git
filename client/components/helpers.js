@@ -1,3 +1,5 @@
+import { css } from 'styled-components';
+
 export const media = {
   desktop: 992,
   tablet: 768,
@@ -9,10 +11,12 @@ export const margin = ({ margin }) => {
     return '';
   }
   if (typeof margin == 'string') {
-    return `margin: ${margin};`;
+    return css`
+      margin: ${margin};
+    `;
   }
 
-  return `
+  return css`
     ${margin.top ? `margin-top: ${margin.top}` : `margin-top: 0`};
     ${margin.right ? `margin-right: ${margin.right}` : `margin-right: 0`};
     ${margin.bottom ? `margin-bottom: ${margin.bottom}` : `margin-bottom: 0`};
@@ -25,10 +29,12 @@ export const padding = ({ padding = '0' }) => {
     return '';
   }
   if (typeof padding == 'string') {
-    return `padding: ${padding};`;
+    return css`
+      padding: ${padding};
+    `;
   }
 
-  return `
+  return css`
     ${padding.top ? `padding-top: ${padding.top}` : `padding-top: 0`};
     ${padding.right ? `padding-right: ${padding.right}` : `padding-right: 0`};
     ${padding.bottom ? `padding-bottom: ${padding.bottom}` : `padding-bottom: 0`};
