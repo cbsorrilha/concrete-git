@@ -1,0 +1,190 @@
+---
+name: GridContainer
+menu: Atoms
+---
+
+import { Playground } from 'docz';
+import Card from '../card.js';
+import GridContainer from '../grid-container';
+import GridItem from '../grid-item';
+
+
+# Grid Container
+The Grid Container give you options to control the grid properties of that element:
+
+
+## Width
+This props defines the width of the grid element
+
+<GridContainer width="300px" style={{border: 'solid black thin'}}>
+  <GridItem>
+    Grid Item 1
+  </GridItem>
+  <GridItem>
+    Grid Item 2
+  </GridItem>
+  <GridItem>
+    Grid Item 3
+  </GridItem>
+  <GridItem>
+    Grid Item 4
+  </GridItem>
+  <GridItem>
+    Grid Item 5
+  </GridItem>
+</GridContainer>
+
+## Height
+This props defines the height of the grid element
+
+<GridContainer height="200px" style={{border: 'solid black thin'}}>
+  <GridItem>
+    Grid Item 1
+  </GridItem>
+  <GridItem>
+    Grid Item 2
+  </GridItem>
+  <GridItem>
+    Grid Item 3
+  </GridItem>
+  <GridItem>
+    Grid Item 4
+  </GridItem>
+  <GridItem>
+    Grid Item 5
+  </GridItem>
+</GridContainer>
+
+## Padding and margin
+the padding and margin properties give you control of their respective css properties.
+You can use it in a string fashion or in a granular fashion
+
+<GridContainer template={{ column: '20%'.repeat(5) }} style={{border: 'solid black thin'}}>
+  <GridItem margin="10px" style={{border: 'solid blue thin'}}>
+    Grid Item 1 has *margin="10px"*
+  </GridItem>
+  <GridItem  style={{border: 'solid blue thin'}}>
+    Grid Item 2
+  </GridItem>
+  <GridItem padding="3px" style={{border: 'solid blue thin'}}>
+    Grid Item 3 has *padding="3px"*
+  </GridItem>
+  <GridItem margin={{top:"25px"}} style={{border: 'solid blue thin'}}>
+    Grid Item 4 has *margin={`{{top:"25px"}}`}*
+  </GridItem>
+  <GridItem padding={{bottom:"25px"}} style={{border: 'solid blue thin'}} order="-1">
+    Grid Item 5 has *padding={`{{bottom:"25px"}}`}*
+  </GridItem>
+</GridContainer>
+
+
+## Template
+This props define the how much columns and rows the grid will have.
+
+Grid Container has `template={{ columns: "20%".repeat(5) }}`
+
+<GridContainer template={{ columns: "20%".repeat(5) }} style={{border: 'solid black thin'}}>
+  <GridItem>
+    Grid Item 1
+  </GridItem>
+  <GridItem>
+    Grid Item 2
+  </GridItem>
+  <GridItem>
+    Grid Item 3
+  </GridItem>
+  <GridItem>
+    Grid Item 4
+  </GridItem>
+  <GridItem>
+    Grid Item 5
+  </GridItem>
+</GridContainer>
+
+## Gap
+This props define the how much columns and rows the grid will have.
+
+Grid Container has `gap="5%"`
+
+<GridContainer template={{ columns: "20%".repeat(4) }} style={{border: 'solid black thin'}}>
+  <GridItem>
+    Grid Item 1
+  </GridItem>
+  <GridItem>
+    Grid Item 2
+  </GridItem>
+  <GridItem>
+    Grid Item 3
+  </GridItem>
+  <GridItem>
+    Grid Item 4
+  </GridItem>
+</GridContainer>
+
+## JustifyItems
+This props defines the `justify-Items` property of the grid element
+
+<GridContainer template={{"columns": "100%"}} justifyItems="center" style={{border: 'solid black thin', marginBottom: '1.5rem'}}>
+  <GridItem>
+    JustifyItems <strong>center</strong> with "columns": "100%"
+  </GridItem>
+</GridContainer>
+
+## AlignItems
+This props defines the `align-items` property of the grid element
+
+<GridContainer template={{colums: "25%", rows: "100%"}} height="150px" alignItems="center" style={{border: 'solid black thin', marginBottom: '1.5rem'}}>
+  <GridItem>
+    alignItems <strong>center</strong> with rows: "100%"
+  </GridItem>
+</GridContainer>
+
+## JustifyContent
+This props defines the `justify-content` property of the grid element
+
+<GridContainer template={{"columns": "20%"}} justifyContent="center" style={{border: 'solid black thin', marginBottom: '1.5rem'}}>
+  <GridItem>
+    JustifyContent <strong>center</strong>
+  </GridItem>
+</GridContainer>
+
+
+## AlignContent
+This props defines the `align-content` property of the grid element
+
+<GridContainer template={{colums: "25%"}} height="150px" alignContent="center" style={{border: 'solid black thin', marginBottom: '1.5rem'}}>
+  <GridItem>
+    alignContent <strong>center</strong>
+  </GridItem>
+</GridContainer>
+
+
+## Playground
+<Playground>
+  <GridContainer
+    width="100%"
+    height="300px"
+    template={{ columns: "20%".repeat(5), rows: "30px" }}
+    padding="2px"
+    margin={{ top: "20px", bottom: "10px" }}
+    justifyContent="center"
+    justifyItems="center"
+    alignItems="center"
+    alignContent="center">
+    <GridItem>
+      Grid Item 1
+    </GridItem>
+    <GridItem>
+      Grid Item 2
+    </GridItem>
+    <GridItem>
+      Grid Item 3
+    </GridItem>
+    <GridItem>
+      Grid Item 4
+    </GridItem>
+    <GridItem>
+      Grid Item 5
+    </GridItem>
+  </GridContainer>
+</Playground>

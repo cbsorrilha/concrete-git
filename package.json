@@ -10,6 +10,7 @@
     "inspect": "yarn lint && yarn test",
     "lint": "eslint --ignore-pattern node_modules client",
     "test": "jest",
+    "docs": "docz dev",
     "docz:dev": "docz dev",
     "docz:build": "docz build"
   },
