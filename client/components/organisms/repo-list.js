@@ -8,18 +8,23 @@ import Link from '../atoms/link';
 import Text from '../atoms/text';
 import Loading from '../molecules/loading';
 
+const mobileTemplate = { columns: 'auto 25%', rows: '50% 50%' };
+const desktopTemplate = { columns: 'auto 25% 25%', rows: '100%' };
+
 const RepoCard = repo => (
   <FlexItem margin={{ bottom: '1.5rem' }}>
-    <Card padding=".5em" desktop={{ padding: '1rem' }}>
-      <GridContainer template={{ columns: 'auto 25% 25%' }}>
-        <GridItem>
+    <Card padding="1rem" height="5rem" desktop={{ padding: '1rem' }}>
+      <GridContainer gap={{ row: '1rem' }} template={mobileTemplate} desktop={{ template: desktopTemplate }}>
+        <GridItem desktop={{ column: '1 / 2', row: '1 / 2' }}>
           <Link to={`/repo/${repo.full_name.replace('/', '%2F')}`}>{repo.name}</Link>
         </GridItem>
-        <GridItem>
-          <Link href={repo.html_url}>See on github.com</Link>
-        </GridItem>
-        <GridItem>
+        <GridItem desktop={{ column: '3 / 4', row: '1 / 2' }}>
           <Text align="right">Stars: {repo.stargazers_count}</Text>
+        </GridItem>
+        <GridItem column="1 / 3" desktop={{ column: '2 / 3', row: '1 / 2' }}>
+          <Text align="right">
+            <Link href={repo.html_url}>See on github.com</Link>
+          </Text>
         </GridItem>
       </GridContainer>
     </Card>
